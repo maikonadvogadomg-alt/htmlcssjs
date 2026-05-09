@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">DevTools PWA</string>
+  <string name="title_activity_main">DevTools PWA</string>
+  <string name="custom_url_scheme">cominsightdashboardmeulegale1replitapp</string>
+</resources>
