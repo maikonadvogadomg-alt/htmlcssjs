@@ -1,0 +1,8 @@
+package com.insight.dashboard.meulegale1.replit.app;
+import android.os.Bundle;
+import com.getcapacitor.BridgeActivity;
+public class MainActivity extends BridgeActivity {
+    @Override public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+}
