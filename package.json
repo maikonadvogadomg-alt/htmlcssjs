@@ -1,17 +1,6 @@
 {
-  "name": "devtools-pwa",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "copy": "cap copy android",
-    "build": "cd android && ./gradlew assembleDebug"
-  },
   "dependencies": {
-    "@capacitor/android": "6.1.2",
-    "@capacitor/core": "6.1.2"
+    "prettier": "^3.4.2"
   },
-  "devDependencies": {
-    "@capacitor/cli": "6.1.2",
-    "typescript": "5.4.5"
-  }
+  "devDependencies": {}
 }
