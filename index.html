@@ -1,23 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>CodeLens</title>
-    <meta name="description" content="Editor de código pessoal com análise por IA e integração GitHub" />
-    <meta name="theme-color" content="#0d1117" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="CodeLens" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iara Suite - Editor Jurídico</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- CONTAINER PRINCIPAL -->
+    <div class="app-container">
+        
+        <!-- SIDEBAR (Navegação) -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">⚖️</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="projects">
+                    <span class="nav-icon">📁</span>
+                    <span class="nav-label">Projetos</span>
+                </a>
+                <a href="#" class="nav-item" data-page="chat">
+                    <span class="nav-icon">💬</span>
+                    <span class="nav-label">Chat</span>
+                </a>
+                <a href="#" class="nav-item" data-page="playground">
+                    <span class="nav-icon">▶️</span>
+                    <span class="nav-label">Playground</span>
+                </a>
+                <a href="#" class="nav-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-label">Config</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-user">
+                <button class="btn-user" onclick="showUserMenu()">
+                    <span class="user-avatar">👤</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            
+            <!-- HEADER -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="btn-menu" onclick="toggleSidebar()">☰</button>
+                    <h1 class="header-title">Iara Suite</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-icon" onclick="toggleTheme()">🌙</button>
+                </div>
+            </header>
+
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+                <!-- Páginas são injetadas aqui -->
+                <div id="pages-container"></div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- MODALS -->
+    <div id="modals-container"></div>
+
+    <!-- TOAST NOTIFICATIONS -->
+    <div id="toast-container"></div>
+
+
+    <!-- SCRIPTS MODULARES (Ordem importa!) -->
+    <script src="js/00-utils.js"></script>
+    <script src="js/01-supabase-client.js"></script>
+    <script src="js/02-auth-module.js"></script>
+    <script src="js/03-projects-module.js"></script>
+    <script src="js/04-editor-module.js"></script>
+    <script src="js/05-chat-module.js"></script>
+    <script src="js/06-playground-module.js"></script>
+    <script src="js/07-settings-module.js"></script>
+    <script src="js/app.js"></script>
+</body>
 </html>
