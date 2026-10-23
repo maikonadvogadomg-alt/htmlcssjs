@@ -24,19 +24,19 @@ jobs:
           keytool -genkey -v -keystore android.keystore -alias app \
             -keyalg RSA -keysize 2048 -validity 10000 \
             -storepass mypassword123 -keypass mypassword123 \
-            -dname "CN=Meu App, OU=App, O=App, L=BR, ST=BR, C=BR"
+            -dname "CN=codelens-local-desktop (1), OU=App, O=App, L=BR, ST=BR, C=BR"
       - name: Criar configuração TWA
         run: |
           cat > twa-manifest.json << 'TWAEOF'
           {
             "packageId": "com.maikonadvogadomgalt.htmlcssjs",
             "host": "maikonadvogadomg-alt.github.io",
-            "name": "Meu App",
-            "launcherName": "App",
+            "name": "codelens-local-desktop (1)",
+            "launcherName": "codelens-loc",
             "display": "standalone",
-            "themeColor": "#1a237e",
-            "navigationColor": "#1a237e",
-            "backgroundColor": "#ffffff",
+            "themeColor": "#0f1420",
+            "navigationColor": "#0f1420",
+            "backgroundColor": "#0f1420",
             "enableNotifications": false,
             "startUrl": "/htmlcssjs/",
             "iconUrl": "https://maikonadvogadomg-alt.github.io/htmlcssjs/icon-192.png",
